@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
- import logo from './logo.svg';
+ import logo from './logo.png';
  import './App.css';
  import {  Query, ApolloProvider } from 'react-apollo';
 import ApolloClient, { InMemoryCache  } from  'apollo-boost';
@@ -93,9 +93,9 @@ const client = new ApolloClient({
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to Apollo</h2>
+            <h2>Willkommen bei Lebenshilfe Bonn</h2>
           </div>
-          <ExchangeRates  />
+          {/* <ExchangeRates  /> */}
         </div>
       </ApolloProvider>
     );
