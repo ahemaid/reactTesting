@@ -1,12 +1,12 @@
   import React, { Component } from 'react';
-  import logo from './logo.png';
   import './App.css';
   import {  Query, ApolloProvider } from 'react-apollo';
   import ApolloClient, { InMemoryCache  } from  'apollo-boost';
   import gql from "graphql-tag";
   import { Dropdown } from 'semantic-ui-react'
   import  MenuExampleNameProp  from './components/blocks/MenuExampleNameProp'
-  import HeaderExampleUsersIcon from './components/blocks/HeaderExampleUsersIcon'
+  import HeaderIcon from './components/blocks/HeaderIcon'
+  import GridExampleColumnWidth from './components/blocks/GridExampleColumnWidth'
 
   const cache = new InMemoryCache();
 
@@ -105,24 +105,38 @@
     render() {
       return (
         <ApolloProvider client={client}>
-
           <div className="App">
             {/* <div className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
               <h2>Willkommen bei Lebenshilfe Bonn</h2>
             </div> */}
             <div>
-          { <HeaderExampleUsersIcon /> }
+          { <HeaderIcon /> }
             </div>
 
             {/* <ExchangeRates  /> */}
 
-            {<DropdownExampleClearable  />}
+            {/* {<DropdownExampleClearable  />} */}
           </div>
 
           <div className="ui header">
             { <MenuExampleNameProp />}
             </div>
+            <div className="ui container">
+
+            <div>
+              {<GridExampleColumnWidth />}
+              {<GridExampleColumnWidth />}
+              {<GridExampleColumnWidth />}
+
+            </div>
+            </div>
+
+            <footer>
+              <div className = "footer">
+              "hi"
+              </div>
+            </footer>
         </ApolloProvider>
 
       );

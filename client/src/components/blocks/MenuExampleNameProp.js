@@ -5,7 +5,12 @@ import 'semantic-ui-css/semantic.min.css';
  export default class MenuExampleNameProp extends Component {
     state = {}
   
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+    routeChange(){
+      let path = `https://www.lebenshilfe-bonn.de`;
+      window.location = path;
+      }
   
     render() {
       const { activeItem } = this.state
@@ -13,18 +18,18 @@ import 'semantic-ui-css/semantic.min.css';
       return (
         <Menu>
           <Menu.Item
-            name='editorials'
-            active={activeItem === 'editorials'}
+            name='Home'
+            active={activeItem === 'Home'}
             onClick={this.handleItemClick}
           />
           <Menu.Item
-            name='reviews'
-            active={activeItem === 'reviews'}
-            onClick={this.handleItemClick}
+            name={'Lenenshilfe-Bonn Website'}
+            active={activeItem === 'Lenenshilfe-Bonn Website'}
+            onClick={this.routeChange}
           />
           <Menu.Item
-            name='upcomingEvents'
-            active={activeItem === 'upcomingEvents'}
+            name='ConSense'
+            active={activeItem === 'ConSense'}
             onClick={this.handleItemClick}
           />
         </Menu>

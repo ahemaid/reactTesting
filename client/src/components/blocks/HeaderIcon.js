@@ -3,7 +3,7 @@ import { Header, Icon, Image } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import logo from '../../logo.png';
 
-const HeaderExampleUsersIcon = () => (
+const HeaderIcon = () => (
   <div>
     <Header as='h2' icon textAlign='center'>
       <Icon name='users' circular />
@@ -15,4 +15,4 @@ const HeaderExampleUsersIcon = () => (
   </div>
 )
 
-export default HeaderExampleUsersIcon
+export default HeaderIcon
