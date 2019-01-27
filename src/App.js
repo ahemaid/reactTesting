@@ -137,6 +137,8 @@
               "hi"
               </div>
             </footer>
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+
         </ApolloProvider>
 
       );
