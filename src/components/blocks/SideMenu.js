@@ -12,10 +12,6 @@ export default class SideMenu extends Component {
     return (
       <Menu vertical>
         <Menu.Item>
-          <Input placeholder='Search...' />
-        </Menu.Item>
-
-        <Menu.Item>
           Home
           <Menu.Menu>
             <Menu.Item
@@ -34,6 +30,9 @@ export default class SideMenu extends Component {
           </Menu.Menu>
         </Menu.Item>
 
+        <Menu.Item>
+          <Input placeholder='Search...' />
+        </Menu.Item>
         <Menu.Item name='browse' active={activeItem === 'browse'} onClick={this.handleItemClick}>
           <Icon name='grid layout' />
           Browse
@@ -43,7 +42,7 @@ export default class SideMenu extends Component {
           active={activeItem === 'messages'}
           onClick={this.handleItemClick}
         >
-          Messages
+          Stichwoerter
         </Menu.Item>
 
         <Dropdown item text='More'>

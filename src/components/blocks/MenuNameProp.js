@@ -56,6 +56,9 @@ export default class MenuNameProp extends Component {
       <div>
       <Menu fixed='top'  inverted>
       <Container>
+      <Menu.Item>
+          <img src='https://www.lebenshilfe-bonn.de/favicon.ico' alt="logo"  />
+        </Menu.Item>
 
         <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
         <Menu.Item
