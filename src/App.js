@@ -125,7 +125,7 @@
 
             <div className="ui  container">
             <Grid>
-            <Grid.Column width={5}>
+            <Grid.Column width={4}>
     {<SideMenu  />}
     </Grid.Column>
 
