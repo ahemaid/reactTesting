@@ -110,9 +110,7 @@
               <img src={logo} className="App-logo" alt="logo" />
               <h2>Willkommen bei Lebenshilfe Bonn</h2>
             </div> */}
-            <div>
-          { <HeaderIcon /> }
-            </div>
+
 
             {/* <ExchangeRates  /> */}
 
@@ -127,11 +125,15 @@
 
             <div className="ui  container">
             <Grid>
-    <Grid.Column width={11}>
-    {<CardGroupProps />}
-    </Grid.Column>
-    <Grid.Column width={4}>
+            <Grid.Column width={5}>
     {<SideMenu  />}
+    </Grid.Column>
+
+    <Grid.Column width={11}>
+    <div>
+          { <HeaderIcon /> }
+            </div>
+    {<CardGroupProps />}
     </Grid.Column>
   </Grid>
             {/* <div >
