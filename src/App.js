@@ -156,6 +156,10 @@
             <div className="column"  >&copy; Lebenshilfe Bonn 2019</div>
             </div>
             </footer>
+<<<<<<< HEAD:src/App.js
+=======
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+>>>>>>> 80211c430f6bfa86cf9467105ac5adf3109adf90:src/App.js
 
         </ApolloProvider>
 
