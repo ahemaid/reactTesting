@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Image} from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css'
 
 // import {src} from '../../logo.png'
 // const items = [
@@ -46,37 +46,53 @@ import 'semantic-ui-css/semantic.min.css';
 
 const CardGroupProps = () => (
   <Card.Group>
-    <Card>
-    <Image src='https://www.gstatic.com/webp/gallery3/1.png' />
-      <Card.Content>
+    <a href="/article?1">
+    <Card  link>
+    <Image src={require('../../images/1.jpg')} />
+         <Card.Content>
+           <Card.Header></Card.Header>
         <Card.Header>Matthew Harris</Card.Header>
         <Card.Meta>Co-Worker</Card.Meta>
         <Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
       </Card.Content>
     </Card>
+    </a>
+    <a href="/article?2">
 
-    <Card>
-      <Image src="https://www.gstatic.com/webp/gallery3/5_webp_ll.png" />
+    < Card link >
+
+      <Image src={require('../../images/2.jpg')} />
+
       <Card.Content>
         <Card.Header content='Jake Smith' />
         <Card.Meta content='Musicians' />
         <Card.Description content='Jake is a drummer living in New York.' />
       </Card.Content>
     </Card>
+    </a>
+    <a href="/article?3">
 
-    <Card>
-      <Card.Content
-        header='Elliot Baker'
-        meta='Friend'
-        description='Elliot is a music producer living in Chicago.'
-      />
+    <Card link>
+    <Image src={require('../../images/3.jpg')} />
+    <Card.Content>
+        <Card.Header content='Jak2e Smith' />
+        <Card.Meta content='Musicians' />
+        <Card.Description content='Jake is a drummer living in New York.' />
+      </Card.Content>
     </Card>
+    </a>
+    <a href="/article?4">
 
-    <Card
-      header='Jenny Hess'
-      meta='Friend'
-      description='Jenny is a student studying Media Management at the New School'
-    />
+    <Card link>
+    <Image src={require('../../images/3.jpg')} />
+    <Card.Content>
+        <Card.Header content='Jake2 Smith' />
+        <Card.Meta content='Musicians' />
+        <Card.Description content='Jake is a drummer living in New York.' />
+      </Card.Content>
+    </Card>
+    </a>
+
   </Card.Group>
 )
 

@@ -1,0 +1,25 @@
+[debug] [2019-01-24T21:45:52.579Z] ----------------------------------------------------------------------
+[debug] [2019-01-24T21:45:52.580Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-01-24T21:45:52.580Z] CLI Version:   6.3.0
+[debug] [2019-01-24T21:45:52.580Z] Platform:      linux
+[debug] [2019-01-24T21:45:52.581Z] Node Version:  v10.15.0
+[debug] [2019-01-24T21:45:52.581Z] Time:          Thu Jan 24 2019 22:45:52 GMT+0100 (Central European Standard Time)
+[debug] [2019-01-24T21:45:52.581Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-24T21:45:52.586Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-24T21:45:52.586Z] > authorizing via signed-in user
+[debug] [2019-01-24T21:45:52.587Z] [iam] checking project certain-bonito-118220 for permissions ["firebase.projects.get"]
+[debug] [2019-01-24T21:45:52.588Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/certain-bonito-118220:testIamPermissions  
+
+[debug] [2019-01-24T21:45:53.488Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-24T21:45:53.492Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/certain-bonito-118220  
+ 
+[debug] [2019-01-24T21:45:54.339Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ahmad/Documents/Development/ReactJs/reactTesting'...
+[info] 
+[debug] [2019-01-24T21:45:54.343Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/881612819090/clients/_:getWebAppConfig  
+ 
+[debug] [2019-01-24T21:45:54.731Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000

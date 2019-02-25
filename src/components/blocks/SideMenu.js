@@ -6,12 +6,23 @@ export default class SideMenu extends Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  routeChange(props){
+    let path = `/`;
+    console.log(props)
+    window.location = path;
+    }
+
+
   render() {
     const { activeItem } = this.state
 
     return (
       <Menu vertical>
-        <Menu.Item>
+        <Menu.Item
+                      name='Home'
+                      active={activeItem === 'Home'}
+                    onClick={this.routeChange}
+                    >
           Home
           <Menu.Menu>
             <Menu.Item

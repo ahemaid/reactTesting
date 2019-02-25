@@ -5,11 +5,13 @@ import logo from '../../logo.png';
 
 const HeaderIcon = () => (
   <div>
+          <img src={logo} className="App-logo" alt="logo" />
+
     <Header as='h3' icon textAlign='center'>
       <Icon name='users' circular />
       <Header.Content>Internal Website</Header.Content>
+
     </Header>
-    <img src={logo} className="App-logo" alt="logo" />
 
   </div>
 )

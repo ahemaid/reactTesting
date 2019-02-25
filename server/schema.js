@@ -52,6 +52,26 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
+const AllEmployeesQuery = new GraphQLObjectType({
+    name: 'AllEmployeesQuery',
+    fields: {
+        employee: {
+            type: EmployeeType,
+            id: {type: GraphQLInt}
+           ,
+            resolve(parentValue) {
+                let arr = []
+                for(let i=0; i<employees.length; i++) {
+                         arr.push(employees[i]) ;
+                    }
+                    return arr; 
+                }
+            }
+        }
+});
+
 module.exports = new GraphQLSchema({
-    query: RootQuery
+    query: RootQuery,AllEmployeesQuery,
+}), new GraphQLSchema({
+    query2: AllEmployeesQuery,
 });

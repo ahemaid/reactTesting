@@ -1,4 +1,5 @@
-  import React, { Component } from 'react';
+  import React, { Component , Switch } from 'react';
+  import { Router, Route } from 'react-router';
   import './App.css';
   import {  Query, ApolloProvider } from 'react-apollo';
   import ApolloClient, { InMemoryCache  } from  'apollo-boost';
@@ -8,30 +9,15 @@
   import HeaderIcon from './components/blocks/HeaderIcon'
   import CardGroupProps from './components/blocks/CardGroupProps'
   import SideMenu from './components/blocks/SideMenu'
+  import Article from './Article'
   const cache = new InMemoryCache();
-
-  // const client = new ApolloClient({
-  //   link: new HttpLink(),
-  //   cache
-  // });
 
   const client = new ApolloClient({
     uri: "http://localhost:4000/graphql",
     cache
   });
 
-  // client
-  //   .query({
-  //     query: gql`
-  //       {
-  //         employee(id: "1") {
-  //           id
 
-  //         }
-  //       }
-  //     `
-  //   })
-  //   .then(result => console.log(result));
 
     const ExchangeRates = () => (
       <Query
@@ -70,95 +56,62 @@
   const DropdownExampleClearable = () => <Dropdown clearable options={options} selection />
 
 
-  // const channelsListQuery = gql`
-  //    query ChannelsListQuery {
-  //      channels {
-  //        id
-  //        name
-  //      }
-  //    }
-  //  `;
-  // const ChannelsListWithData = graphql(channelsListQuery)(ChannelsList);
-
-  // // const ChannelsList = () =>
-  // //      (<ul>
-  // //        <li>Channel 1</li>
-  // //        <li>Channel 2</li>
-  // //      </ul>);
-
-  // const ChannelsList = ({ data: {loading, error, channels }}) => {
-  //   if (loading) {
-  //     return <p>Loading ...</p>;
-  //   }
-  //   if (error) {
-  //     return <p>{error.message}</p>;
-  //   }
-  //   return <ul>
-  //     { channels.map( ch => <li key={ch.id}>{ch.name}</li> ) }
-  //   </ul>;
-  // };
-
-
-
-
-  class App extends Component {
+  export default class App extends Component {
     render() {
       return (
+        // <Router> 
+
         <ApolloProvider client={client}>
-          <div className="App">
-            {/* <div className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h2>Willkommen bei Lebenshilfe Bonn</h2>
-            </div> */}
+                  <div id="App" className="App">
 
 
-            {/* <ExchangeRates  /> */}
-
-            {/* {<DropdownExampleClearable  />} */}
-          </div>
           <div className="ui container">
 
-          <div className="ui header">
+          <div className="ui big header">
             { <MenuNameProp />}
             </div>
+
             </div>
 
-            <div className="ui  container">
+            <div  className="ui second container">
             <Grid>
-            <Grid.Column width={4}>
-    {<SideMenu  />}
-    </Grid.Column>
 
-    <Grid.Column width={11}>
+    <Grid.Column width={10}>
     <div>
           { <HeaderIcon /> }
             </div>
     {<CardGroupProps />}
     </Grid.Column>
+    <Grid.Column width={6}>
+    {<SideMenu  />}
+    </Grid.Column>
   </Grid>
-            {/* <div >
-              {<CardGroupProps />}
-              {<GridExampleColumnWidth />}
-              {<GridExampleColumnWidth />}
 
-            </div> */}
-            </div>
+  </div>
 
-            {/* <footer>
-              {/* <div className = "ui bottom menu">
-              "hi"
-              </div> }
-              <div className="ui inverted  bottom borderless  menu "><div className="column"  >&copy; Lebenshilfe Bonn 2019</div></div>
-            </footer> */}
-    {/* <footer class="footer">
-            <Segment className="ui inverted fixed  borderless" attached='bottom'>&copy; Lebenshilfe Bonn 2019</Segment>
-            </footer> */}
             <footer>
             <div  className="ui inverted fixed vertical segment ">
+            <div className="column"  >Kontakt</div>
             <div className="column"  >&copy; Lebenshilfe Bonn 2019</div>
             </div>
             </footer>
+            {/* <Switch>
+        <Route exact path="/" component={<App />} />
+        {/* <Route exact path="/">
+          <Redirect to="/Home" />
+        </Route> */}
+        {/* <Route exact path="/Article" component={<Article />} /> */}
+        {/* <Route exact path="/About" component={Home} />
+        <Route exact path="/Topics" component={TopicList} />
+        <Route path="/Topics/:topicId" component={TopicDetail} />
+        <Route component={NoMatch} /> */}
+      {/* </Switch> */} */}
+
+            </div>
+
         </ApolloProvider>
+        // {/* </Router> */}
+
 
       );
     }
@@ -214,4 +167,4 @@
   //   }
   // }
 
-  export default App;
+  // export default App;
