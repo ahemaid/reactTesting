@@ -28,8 +28,8 @@ import Article from './Article';
 ReactDOM.render(
     <BrowserRouter >
       <div>
-      <Route path="/" component={ App } />
-        <Route path="/Article" component={ Article } />
+      <Route exact path="/" component={ App } />
+        <Route exact path="/Article" component={ Article } />
 
 
       </div>

@@ -59,8 +59,7 @@ export default class MenuNameProp extends Component {
       <Menu.Item>
           <img src='https://www.lebenshilfe-bonn.de/favicon.ico' alt="logo"  />
         </Menu.Item>
-
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+        <Menu.Item name='home'  onClick={this.handleItemClick} />
         <Menu.Item
             name={'Lenenshilfe-Bonn Website'}
             active={activeItem === 'Lenenshilfe-Bonn Website'}
