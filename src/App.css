@@ -15,6 +15,12 @@
 
 }
 
+.ui.comments {
+  margin-top: 40% !important;
+  text-align: left;
+  padding-bottom: 10%;
+
+}
 .App-intro {
   font-size: 18px;
 }
