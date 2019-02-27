@@ -84,7 +84,7 @@ const CardGroupProps = () => (
     <a href="/article?4">
 
     <Card link>
-    <Image src={require('../../images/3.jpg')} />
+    <Image src={require('../../images/4.jpg')} />
     <Card.Content>
         <Card.Header content='Jake2 Smith' />
         <Card.Meta content='Musicians' />
