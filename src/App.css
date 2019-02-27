@@ -31,8 +31,15 @@ body{
 
 }
 
+#text{
+text-align: left;
+}
 .Item-list {
   list-style: none;
+}
+
+.ui.secondary.vertical.menu {
+  margin-top: -35%;
 }
 
 .Item-list li {

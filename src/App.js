@@ -91,8 +91,8 @@
 
             <footer>
             <div  className="ui inverted fixed vertical segment ">
-            <div className="column"  >Kontakt</div>
-            <div className="column"  >&copy; Lebenshilfe Bonn 2019</div>
+          <div className="column"  >Kontakt: Susanne Land  &  Katrin Lankers    über      Kontakt@lebenshilfe-bonn.de</div>
+          <div className="column"  >&copy; Lebenshilfe Bonn 2019</div>
             </div>
             </footer>
             {/* <Switch>

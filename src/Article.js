@@ -6,12 +6,73 @@ import { Dropdown, Grid,  Button, Comment, Form, Image } from 'semantic-ui-react
 import  MenuNameProp  from './components/blocks/MenuNameProp'
 import HeaderIcon from './components/blocks/HeaderIcon'
 import CardGroupProps from './components/blocks/CardGroupProps'
-import SideMenu from './components/blocks/SideMenu'
 import data from './data/data.json'
+import { Header, Icon, Input, Menu } from 'semantic-ui-react'
+
+ class SideMenu2 extends Component {
+  state = {}
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  routeChange(props){
+    let path = `/`;
+    console.log(props)
+    window.location = path;
+    }
+
+
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <Menu  secondary  vertical >
+        <Menu.Item
+                      name='Home'
+                      active={activeItem === 'Home'}
+                    onClick={this.routeChange}
+                    >
+          Home
+
+            <Menu.Item name='add' active={activeItem === 'add'} onClick={this.handleItemClick}>
+            
+            <a>Nächster-></a>
+            </Menu.Item>
+            <Menu.Item name='about' active={activeItem === 'about'} onClick={this.handleItemClick}>
+            <a> &lt;-vorher</a>
+            </Menu.Item>
+        </Menu.Item>
+
+
+        {/* <Menu.Item name='browse' active={activeItem === 'browse'} onClick={this.handleItemClick}>
+          <Icon name='grid layout' />
+          Browse
+        </Menu.Item> */}
+        <Menu.Item
+          name='messages'
+          active={activeItem === 'messages'}
+          onClick={this.handleItemClick}
+        >
+          Stichwoerter <br/>
+          <a>#endregion</a>
+        </Menu.Item>
+        <Menu.Item>
+          <Input placeholder='Search...' />
+        </Menu.Item>
+        {/* <Dropdown item text='More'>
+          <Dropdown.Menu>
+            <Dropdown.Item icon='edit' text='Edit Profile' />
+            <Dropdown.Item icon='globe' text='Choose Language' />
+            <Dropdown.Item icon='settings' text='Account Settings' />
+          </Dropdown.Menu>
+        </Dropdown> */}
+      </Menu>
+    )
+  }
+}
+
 const cache = new InMemoryCache();
 
 
-const text4 = "<p class=\"bodytext\">as Men&uuml; ist dreig&auml;ngig: Zweierlei Brotaufstrich, Spitzkohl-Nudel-Pfanne und zum Dessert Vanillemousse. Was auf den Tisch kommt, entscheiden alle gemeinsam. Doch vor dem Essen muss nat&uuml;rlich erstmal gekocht werden, ebenfalls gemeinsam. Zum Kochtreff \"Miteinander kochen\" kommen einmal im Monat Menschen mit und ohne Behinderung ins Begegnungszentrum \"Das Luise\" in Bornheim-Hersel.</p><p class=\"bodytext\">\"Ich mache das, damit ich unter Menschen komme\", sagt Teilnehmerin Sina A. \"Das Essen ist lecker und die Menschen sind &hellip;\" Sie streckt beide Daumen in die H&ouml;he. Frieder T. erg&auml;nzt: \"Nach den Nachrichten komme ich. Da f&uuml;hle ich mich bei euch zuhause. Hier gibt es leckere Gem&uuml;sepfanne.\" Und auch Christiane K. ist begeistert: \"Ich komme zu allen Terminen. Kochen ist mein Hobby.</p><p class=\"bodytext\">Bereits seit f&uuml;nf Jahren findet der gemeinsame Kochtreff statt. Mit dabei ist eine gemischte Gruppe in wechselnder Besetzung. Wer Lust auf Kochen, gemeinsames Essen und Reden hat, ist herzlich willkommen. Einige, wie Christiane K. kommen gerne immer wieder. Und auch die freiwillig Engagierten von Rotaract, die den Kochtreff unterst&uuml;tzen, sind immer wieder gerne dabei: \"Es ist ein sch&ouml;nes Erlebnis in der Gemeinschaft\", sagt Yannik Breitkreuz. \"Und es ist etwas Besonderes, immer wieder neue Menschen kennen zu lernen.\"</p><p class=\"bodytext\">Auch Anna Schl&uuml;ter von der Lebenshilfe, die \"Miteinander kochen\" organisiert, findet, dass der Kochtreff ein besonderes Angebot ist: \"Hier mischen sich Menschen aus ganz verschiedenen Kreisen. Man lernt sich ganz leicht kennen und es ist ein sehr harmonisches Miteinander.\" Von den Teilnehmenden wird nur ein kleiner Umkostenbeitrag erhoben. \"F&uuml;r die fachliche Begleitung und die ganze Koordination im Hintergrund sind wir deshalb dringend auf Spenden angewiesen\", betont Anna Schl&uuml;ter.</p><p class=\"bodytext\"><strong>Wenn Sie \"Miteinander kochen\" unterst&uuml;tzen wollen, freuen wir uns sehr &uuml;ber Ihre&nbsp;<a class=\"internal-link\" href=\"https://www.lebenshilfe-bonn.de/spenden/jetzt-online-spenden/\" target=\"_top\">Spende</a>.</strong></p>";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
@@ -104,6 +165,14 @@ const CommentExampleReplyFormOuter = () => (
 
 
 export default class Article extends Component {
+  constructor() {
+    super();
+    this.state = {
+      description: "<p class=\"bodytext\">as Men&uuml; ist dreig&auml;ngig: Zweierlei Brotaufstrich, Spitzkohl-Nudel-Pfanne und zum Dessert Vanillemousse. Was auf den Tisch kommt, entscheiden alle gemeinsam. Doch vor dem Essen muss nat&uuml;rlich erstmal gekocht werden, ebenfalls gemeinsam. Zum Kochtreff \"Miteinander kochen\" kommen einmal im Monat Menschen mit und ohne Behinderung ins Begegnungszentrum \"Das Luise\" in Bornheim-Hersel.</p><p class=\"bodytext\">\"Ich mache das, damit ich unter Menschen komme\", sagt Teilnehmerin Sina A. \"Das Essen ist lecker und die Menschen sind &hellip;\" Sie streckt beide Daumen in die H&ouml;he. Frieder T. erg&auml;nzt: \"Nach den Nachrichten komme ich. Da f&uuml;hle ich mich bei euch zuhause. Hier gibt es leckere Gem&uuml;sepfanne.\" Und auch Christiane K. ist begeistert: \"Ich komme zu allen Terminen. Kochen ist mein Hobby.</p><p class=\"bodytext\">Bereits seit f&uuml;nf Jahren findet der gemeinsame Kochtreff statt. Mit dabei ist eine gemischte Gruppe in wechselnder Besetzung. Wer Lust auf Kochen, gemeinsames Essen und Reden hat, ist herzlich willkommen. Einige, wie Christiane K. kommen gerne immer wieder. Und auch die freiwillig Engagierten von Rotaract, die den Kochtreff unterst&uuml;tzen, sind immer wieder gerne dabei: \"Es ist ein sch&ouml;nes Erlebnis in der Gemeinschaft\", sagt Yannik Breitkreuz. \"Und es ist etwas Besonderes, immer wieder neue Menschen kennen zu lernen.\"</p><p class=\"bodytext\">Auch Anna Schl&uuml;ter von der Lebenshilfe, die \"Miteinander kochen\" organisiert, findet, dass der Kochtreff ein besonderes Angebot ist: \"Hier mischen sich Menschen aus ganz verschiedenen Kreisen. Man lernt sich ganz leicht kennen und es ist ein sehr harmonisches Miteinander.\" Von den Teilnehmenden wird nur ein kleiner Umkostenbeitrag erhoben. \"F&uuml;r die fachliche Begleitung und die ganze Koordination im Hintergrund sind wir deshalb dringend auf Spenden angewiesen\", betont Anna Schl&uuml;ter.</p><p class=\"bodytext\"><strong>Wenn Sie \"Miteinander kochen\" unterst&uuml;tzen wollen, freuen wir uns sehr &uuml;ber Ihre&nbsp;<a class=\"internal-link\" href=\"https://www.lebenshilfe-bonn.de/spenden/jetzt-online-spenden/\" target=\"_top\">Spende</a>.</strong></p>"
+
+    }
+  }
+
   render() {
     var referrer = document.URL;
     console.log(referrer)
@@ -144,11 +213,16 @@ export default class Article extends Component {
 
 <Grid.Column width={10}>
 <ImageExampleFluid />
-<text4 />
+<Header as='h2' textAlign='left' >
+      <Header.Content>Miteinander kochen
+</Header.Content>
+
+    </Header>
+<div id="text" dangerouslySetInnerHTML={{ __html: this.state.description }} />
 <CommentExampleReplyFormOuter  />
 </Grid.Column>
 <Grid.Column width={6}>
-{<SideMenu  />}
+{<SideMenu2  />}
 </Grid.Column>
 </Grid>
 
@@ -157,7 +231,7 @@ export default class Article extends Component {
 
           <footer>
           <div  className="ui inverted fixed vertical segment ">
-          <div className="column"  >Kontaktme</div>
+          <div className="column"  >Kontakt: Susanne Land  &  Katrin Lankers    über      Kontakt@lebenshilfe-bonn.de</div>
           <div className="column"  >&copy; Lebenshilfe Bonn 2019</div>
           </div>
           </footer>
